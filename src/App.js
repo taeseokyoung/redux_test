@@ -1,12 +1,15 @@
-import React from 'react';
-import store from './store';
+import React from 'react'
+import { useSelector } from 'react-redux';
+import Sub from './Sub';
+import './dark.scss'
 
 const App = () => {
-    // console.log(store) 콘솔에 암것두 없어여
-    console.log(store)
+    const { changeMode } = useSelector(it => it)
+    console.log('app', changeMode)
     return (
-
-        <div> App</div>
+        <div className={`App ${changeMode ? "on" : ""}`}>
+            <Sub />
+        </div>
     )
 }
 
